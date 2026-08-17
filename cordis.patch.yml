@@ -1,0 +1,8 @@
+# dsh-tool-vision bundle patch: inserts the host plugin row into the profile
+# roster. Applied as a profile bundle layer (the `dsh.bundle.patch` manifest
+# field) over dsh-base. The row is a bare plugin by package name; the host half
+# (exports ".") runs in the dsh host process and registers the recognize_image
+# tool on ctx.tools. No browser half.
+- insert:
+    - id: tool-vision
+      name: '@m77can/dsh-tool-vision'

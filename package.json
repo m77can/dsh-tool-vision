@@ -1,0 +1,44 @@
+{
+  "name": "@m77can/dsh-tool-vision",
+  "description": "DeepSeek Vision 识图工具（dsh 插件）：把 DeepSeek 网页版识图（Vision）封装为 dsh 的 recognize_image 工具，让 DeepSeek 模型可以分析图片内容。移植自 deepseek-vision-mcp-rs 与 deepseek-vision-mcp（含 Puppeteer 自动登录）。",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "src",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "puppeteer": "^25.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "vision",
+    "image-recognition",
+    "tool"
+  ],
+  "license": "MIT"
+}
